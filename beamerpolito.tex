@@ -1,0 +1,177 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts,amsmath,oldgerm}
+\usetheme{sintef}
+
+\usefonttheme[onlymath]{serif}
+
+\titlebackground*{assets/background}
+
+\newcommand{\hrefcol}[2]{\textcolor{cyan}{\href{#1}{#2}}}
+
+\title{Riconoscimento di dispositivi di
+protezione individuale in ambito
+industriale tramite infrastruttura
+cloud}
+%\subtitle{Sottotitolo della Tesi (se necessario)}
+\course{Corso di Laurea Magistrale in Ingegneria Informatica}
+\author{\href{mailto:rei.zoto@studenti.polito.it}{Rei Zoto}}
+\IDnumber{Matricola: 258017}
+
+\begin{document}
+\maketitle
+
+\section{Introduzione}
+
+\begin{frame}{Problemi e soluzioni}
+\begin{itemize}
+    \item Panoramica infortuni sul lavoro.
+    	\begin{itemize}
+    		\item costi diretti
+    		\item costi indiretti
+    		\item impatto sulla società
+    	\end{itemize}	
+    \item dispositivi di sicurezza
+    \item sistemi automatici al posto di controlli manuali
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Statistiche}
+\begin{itemize}
+    \item INAIL
+    \item OSHA-EU
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Obiettivi e Motivazioni}
+\textbf{Scopo del lavoro}:
+\begin{itemize}
+    \item Ricerca sull'utilizzo di modelli pronti all'uso forniti da servizi cloud.
+    \item Implementazione di un sistema basato sul cloud per la rilevazione di dispositivi di sicurezza.
+\end{itemize}
+
+\textbf{Motivazioni personali}:
+\begin{itemize}
+    \item Interesse nelle tematiche IoT.
+    \item Conoscenze pregresse di Machine Learning dal corso seguito al Politecnico.
+    \item Scelta della tesi durante lo studio di sistemi operativi, virtualizzazione ed estensione dei concetti al cloud.
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+\section{Panoramica}
+\begin{frame}{Computer Vision}
+\end{frame}
+\begin{frame}{Lavori Correlati}
+\begin{itemize}
+    \item Approccio edge-cloud in collaborazione con Microsoft.
+    \item Approccio on-premise (Stato dell'Arte).
+    \item Citazione delle università coinvolte.
+\end{itemize}
+
+\textbf{Posizionamento della soluzione proposta}:
+\begin{itemize}
+    \item Dove si posiziona la soluzione rispetto ai lavori esistenti.
+    \item Modello utilizzato: Rekognition
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Approccio Proposto}
+\textbf{Use Case}:
+\begin{itemize}
+    \item Risposta al problema con un sistema near real-time.
+\end{itemize}
+
+\textbf{Motivazioni}:
+\begin{itemize}
+    \item Mancanza di benchmark specifici per dispositivi di sicurezza.
+    \item L'approccio near real-time è conservativo a causa di:
+    \begin{itemize}
+        \item Tempi di risposta del modello non veloci (servizio pensato per tutti gli utenti AWS, tipicamente 5 fps).
+        \item Latenza intrinseca del cloud computing e problemi di connettività.
+    \end{itemize}
+    \item Come risolvere il problema andando offline?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tecnologie Utilizzate}
+    \centering
+    \begin{tabular}{ccc}
+        % Prima Riga: Docker, AWS, Apache Flink
+        \includegraphics[width=0.2\textwidth]{images/docker_logo.png} & 
+        \includegraphics[width=0.2\textwidth]{images/aws_logo.png} & 
+        \includegraphics[width=0.2\textwidth]{images/apache_flink_logo.jpeg} \\
+        Docker & AWS & Apache Flink \\
+        \vspace{0.5cm} \\ % Spazio aggiuntivo tra le righe
+        % Seconda Riga: MQTT, RTSP, Publish/Subscribe
+        \includegraphics[width=0.1\textwidth]{images/mqtt_logo.png} & 
+        \includegraphics[width=0.1\textwidth]{images/rtsp_logo.png} \\ 
+        MQTT & RTSP \\
+    \end{tabular}
+    \footlinecolor{sintefyellow}
+\end{frame}
+
+
+\section{Architettura del Sistema}
+
+\begin{frame}{Architettura del Sistema}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=\textwidth]{assets/architettura_sistema}
+%    \caption{Diagramma dell'Architettura Generale}
+%\end{figure}
+\begin{itemize}
+    \item \textbf{Componenti Chiave}:
+    \begin{itemize}
+        \item Dispositivi Edge.
+        \item Cloud.
+        \item Pipeline di dati.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Risultati}
+
+\begin{frame}{Test Case}
+\textbf{Funzionalità Raggiunte}:
+\begin{itemize}
+    \item Rilevazioni near real-time nei 5 use case.
+    \item Dettagli funzionali e metriche.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Metriche}
+\textbf{Funzionalità Raggiunte}:
+\begin{itemize}
+    \item Rilevazioni near real-time nei 5 use case.
+    \item Dettagli funzionali e metriche.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limitazioni}
+\begin{itemize}
+    \item Discussione delle limitazioni dell'approccio.
+    \item L'azienda ha deciso di passare a una soluzione edge su mio consiglio, estensione di questo progetto.
+    \item Consapevolezza delle differenze rispetto ai lavori accademici più complessi.
+\end{itemize}
+\end{frame}
+
+\section{Conclusioni}
+
+\begin{frame}{Conclusioni e Sviluppi futuri}
+\begin{itemize}
+    \item Riepilogo dei punti chiave.
+    \item Potenziali miglioramenti ed estensioni future.
+\end{itemize}
+\end{frame}
+
+\section*{Domande}
+
+\backmatter
+\end{document}
