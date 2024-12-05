@@ -23,38 +23,92 @@ cloud}
 
 \section{Introduzione}
 
-\begin{frame}{Problemi e soluzioni}
+\begin{frame}{Infortuni sul Lavoro}
 \begin{itemize}
-    \item Panoramica infortuni sul lavoro.
+    \item Problemi
     	\begin{itemize}
     		\item costi diretti
     		\item costi indiretti
     		\item impatto sulla società
     	\end{itemize}	
-    \item dispositivi di sicurezza
-    \item sistemi automatici al posto di controlli manuali
+    \item Soluzioni
+    \begin{itemize}
+    	\item Prevenzione: valutazione dei rischi, idoneità del lavoratore, formazione
+    	\item Dispositivi di sicurezza individuale (DPI)
+    	\item Sistemi automatici al posto di controlli manuali
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Statistiche}
-\begin{itemize}
-    \item INAIL
-    \item OSHA-EU
-\end{itemize}
+\begin{frame}{INAIL: Statistiche sugli infortuni}
+  \begin{itemize}
+  		\item Totale infortuni nella manifattura anno 2022: 13,9\%
+  \end{itemize}  	  
+  \begin{columns}
+    % Prima colonna
+    \begin{column}{0.4\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/totaleinfortuni.png}
+      \vspace{2mm}
+      \small{Totale infortuni divisi per genere}
+    \end{column}
 
+    % Seconda colonna
+    \begin{column}{0.3\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/infortuni_industria_e_servizi.png}
+      \vspace{2mm}
+      \small{Infortuni per categoria}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}{OSHA-EU: Impatto sulla produttività nazionale}
+%  \begin{itemize}
+%  	\item DALY: stima anni di vita persi per infortuni e malattie
+%	\item VSLY: metodologia che associa agli anni di vita un valore monetario
+
+%  \end{itemize}
+  \begin{columns}  
+    % Prima colonna
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/onere_infortuni_ba.png}
+      \vspace{2mm}
+      \small{Approccio bottom-up}
+    \end{column}
+
+    % Seconda colonna
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/onere_infortuni_td.png}
+      \vspace{2mm}
+      \small{Approccio top-down}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Obiettivi e Motivazioni}
 \textbf{Scopo del lavoro}:
 \begin{itemize}
-    \item Ricerca sull'utilizzo di modelli pronti all'uso forniti da servizi cloud.
-    \item Implementazione di un sistema basato sul cloud per la rilevazione di dispositivi di sicurezza.
+	\item Implementazione di un sistema integrato con il cloud per la rilevazione di dispositivi di sicurezza    
+    \item Modelli pronti all'uso forniti da provider cloud
+    
 \end{itemize}
 
 \textbf{Motivazioni personali}:
 \begin{itemize}
-    \item Interesse nelle tematiche IoT.
-    \item Conoscenze pregresse di Machine Learning dal corso seguito al Politecnico.
+    \item Interesse sistemi IoT e deep learning
     \item Scelta della tesi durante lo studio di sistemi operativi, virtualizzazione ed estensione dei concetti al cloud.
 \end{itemize}
 \end{frame}
@@ -66,26 +120,79 @@ cloud}
 
 
 \section{Panoramica}
+
+\begin{frame}{Fattori abilitanti}
+\begin{itemize}
+	\item Quantità di dati disponibili provenienti dai dispositivi connessi alla rete
+	\item Avanzamenti deep learning
+	\item Cloud computing: potenza di calcolo ed integrazione di modelli e dati nell'ecosistema industriale
+	\item Investimenti (cita i ritorni economici previsti dallo studio, ma anche l'hype attuale su ai)
+\end{itemize}
+\end{frame}
+
+%prova a rendere più densa questa slide
 \begin{frame}{Computer Vision}
+	\begin{itemize}
+	\item Utilizzo modelli di deep learning per task di computer vision
+			%classificazione
+			%object detection
+			%image segmentation
+			%image generation, encoding
+	\item Dominio di applicazione: object detection
+	\item Modello utilizzato: Amazon Rekognition %descrivi come funziona
+	\item[] % Elemento senza bullet
+    \includegraphics[width=0.3\textwidth]{images/worker-with-bb.png}
+	\end{itemize}
 \end{frame}
+
 \begin{frame}{Lavori Correlati}
-\begin{itemize}
-    \item Approccio edge-cloud in collaborazione con Microsoft.
-    \item Approccio on-premise (Stato dell'Arte).
-    \item Citazione delle università coinvolte.
-\end{itemize}
+  \begin{columns}
+    % Prima colonna
+    \begin{column}{0.5\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/relw1-system.png}
+      \tiny B. Balakreshnan and Others, “Ppe compliance detection using artificial
+intelligence in learning factories”
+    \end{column}
 
-\textbf{Posizionamento della soluzione proposta}:
-\begin{itemize}
-    \item Dove si posiziona la soluzione rispetto ai lavori esistenti.
-    \item Modello utilizzato: Rekognition
-\end{itemize}
+    % Seconda colonna
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{images/safety-system.png}
+      \caption{\tiny {I. Yousif and Others, “Safety 4.0: Harnessing computer vision for
+advanced industrial protection”}}
+	\end{figure} 
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\begin{frame}{Approccio Proposto}
-\textbf{Use Case}:
+%\begin{frame}{Lavori Simili (cont.)}
+%  \begin{columns}
+    % Prima colonna
+%    \begin{column}{0.4\textwidth}
+%      \centering
+%      \includegraphics[width=\textwidth]{images/relw1.png}
+%      \vspace{2mm}
+%      \small{1) Metriche sulle classi maschera protettiva, volti e persone}
+%    \end{column}
+
+    % Seconda colonna
+%    \begin{column}{0.4\textwidth}
+%      \centering
+%      \includegraphics[width=\textwidth]{images/safety-system-results.png}
+%      \vspace{2mm}
+%      \small{2) Mean Average Precision sulle classi casco e giubotto protettivo}
+%    \end{column}
+%  \end{columns}
+%\end{frame}
+
+
+\begin{frame}{Soluzione}
+
 \begin{itemize}
     \item Risposta al problema con un sistema near real-time.
+    \item Posizionamento della soluzione rispetto agli approcci precedenti
 \end{itemize}
 
 \textbf{Motivazioni}:
@@ -94,9 +201,8 @@ cloud}
     \item L'approccio near real-time è conservativo a causa di:
     \begin{itemize}
         \item Tempi di risposta del modello non veloci (servizio pensato per tutti gli utenti AWS, tipicamente 5 fps).
-        \item Latenza intrinseca del cloud computing e problemi di connettività.
+        \item Latenza intrinseca per la comunicazione con il cloud e problemi di connettività.
     \end{itemize}
-    \item Come risolvere il problema andando offline?
 \end{itemize}
 \end{frame}
 
@@ -107,42 +213,82 @@ cloud}
         \includegraphics[width=0.2\textwidth]{images/docker_logo.png} & 
         \includegraphics[width=0.2\textwidth]{images/aws_logo.png} & 
         \includegraphics[width=0.2\textwidth]{images/apache_flink_logo.jpeg} \\
-        Docker & AWS & Apache Flink \\
+         	& 	 & Apache Flink \\
         \vspace{0.5cm} \\ % Spazio aggiuntivo tra le righe
         % Seconda Riga: MQTT, RTSP, Publish/Subscribe
-        \includegraphics[width=0.1\textwidth]{images/mqtt_logo.png} & 
-        \includegraphics[width=0.1\textwidth]{images/rtsp_logo.png} \\ 
-        MQTT & RTSP \\
+        \includegraphics[width=0.2\textwidth]{images/mqtt_logo.png} & 
+        \includegraphics[width=0.2\textwidth]{images/rtsp_logo.png} \\ 
     \end{tabular}
     \footlinecolor{sintefyellow}
 \end{frame}
 
-
-\section{Architettura del Sistema}
-
-\begin{frame}{Architettura del Sistema}
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=\textwidth]{assets/architettura_sistema}
-%    \caption{Diagramma dell'Architettura Generale}
-%\end{figure}
+%vedi se aggiungere, forse too much ma sarebbe utile per la comprensione
+%\begin{frame}{Servizi utilizzati}
+%\end{frame}
+\section{Implementazione}
+\begin{frame}{Use Case}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\footnotesize
 \begin{itemize}
-    \item \textbf{Componenti Chiave}:
-    \begin{itemize}
-        \item Dispositivi Edge.
-        \item Cloud.
-        \item Pipeline di dati.
-    \end{itemize}
+	\item Scenario	
+\begin{itemize}
+\footnotesize
+	\item Uno o più operatori entrano all’interno di una certa area di sicurezza e si trovano in prossimità di un macchinario attivo
+	\item Una telecamera sul soffitto ed una frontale monitorano l’area di sicurezza
+	\item La zona è definita da un insieme di ancore dotate di sensori che rilevano i tag indossati dai lavoratori. 
 \end{itemize}
+	\item Il sistema genera allarme e spegne il macchinario	
+\begin{itemize}
+\footnotesize
+	\item Almeno uno degli operatori non possiede i dispositivi di sicurezza
+	\item Almeno uno degli operatori non è abilitato ad agire sulla macchina
+\end{itemize}
+\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+	\begin{figure}	
+	\centering
+    \includegraphics[width=0.7\textwidth]{images/use-case.png}
+    \end{figure}
+\end{column}
+\end{columns}
 \end{frame}
+
+\begin{frame}{Architettura}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/architettura.png}
+%    \caption{Diagramma dell'Architettura Generale}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Ingestion e Preprocessing}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/sottosistema-ingestion.png}
+%    \caption{Diagramma dell'Architettura Generale}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Big Data Processing}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/processing-subsystem.png}
+%    \caption{Diagramma dell'Architettura Generale}
+\end{figure}
+
+\end{frame}
+
 
 \section{Risultati}
 
-\begin{frame}{Test Case}
+\begin{frame}{Test}
 \textbf{Funzionalità Raggiunte}:
 \begin{itemize}
-    \item Rilevazioni near real-time nei 5 use case.
-    \item Dettagli funzionali e metriche.
+    \item Rilevazioni near real-time nei 5 test case
+    \item Dettagli funzionali e metriche
 \end{itemize}
 \end{frame}
 
