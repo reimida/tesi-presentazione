@@ -101,11 +101,10 @@ cloud}
 \begin{frame}{Obiettivi e Motivazioni}
 \textbf{Scopo del lavoro}:
 \begin{itemize}
+\vspace{0.2cm}
 	\item Implementazione di un sistema integrato con il cloud per la rilevazione di dispositivi di sicurezza    
-    \item Modelli pronti all'uso forniti da provider cloud
-    
 \end{itemize}
-
+\vspace{0.3cm}
 \textbf{Motivazioni personali}:
 \begin{itemize}
     \item Interesse sistemi IoT e deep learning
@@ -121,28 +120,35 @@ cloud}
 
 \section{Panoramica}
 
-\begin{frame}{Fattori abilitanti}
+\begin{frame}{Innovazione nell'industria: fattori abilitanti}
 \begin{itemize}
-	\item Quantità di dati disponibili provenienti dai dispositivi connessi alla rete
-	\item Avanzamenti deep learning
-	\item Cloud computing: potenza di calcolo ed integrazione di modelli e dati nell'ecosistema industriale
-	\item Investimenti (cita i ritorni economici previsti dallo studio, ma anche l'hype attuale su ai)
+	\item Quantità di dati disponibili grazie dispositivi connessi alla rete
+	\item Avanzamenti Deep Learning
+	\item Cloud Computing: potenza di calcolo ed integrazione di modelli e dati nell'ecosistema industriale
+	\item Investimenti
 \end{itemize}
 \end{frame}
 
 %prova a rendere più densa questa slide
 \begin{frame}{Computer Vision}
-	\begin{itemize}
-	\item Utilizzo modelli di deep learning per task di computer vision
-			%classificazione
-			%object detection
-			%image segmentation
-			%image generation, encoding
-	\item Dominio di applicazione: object detection
-	\item Modello utilizzato: Amazon Rekognition %descrivi come funziona
-	\item[] % Elemento senza bullet
-    \includegraphics[width=0.3\textwidth]{images/worker-with-bb.png}
-	\end{itemize}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.55\textwidth}
+      \begin{itemize}
+      	\vspace{0.5cm}        
+        \item Utilizzo di modelli di deep learning per diversi task di computer vision
+        \vspace{0.3cm}
+          % classificazione, object detection, image segmentation, ...
+        \item Dominio di applicazione: Object Detection
+        \vspace{0.3cm}
+        \item Modello utilizzato: Amazon Rekognition      
+      \end{itemize}
+    \end{column}
+
+    \begin{column}{0.4\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{images/worker-with-bb.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Lavori Correlati}
@@ -160,8 +166,8 @@ intelligence in learning factories”
       \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{images/safety-system.png}
-      \caption{\tiny {I. Yousif and Others, “Safety 4.0: Harnessing computer vision for
-advanced industrial protection”}}
+      \tiny {I. Yousif and Others, “Safety 4.0: Harnessing computer vision for
+advanced industrial protection”}
 	\end{figure} 
     \end{column}
   \end{columns}
@@ -191,22 +197,28 @@ advanced industrial protection”}}
 \begin{frame}{Soluzione}
 
 \begin{itemize}
-    \item Risposta al problema con un sistema near real-time.
-    \item Posizionamento della soluzione rispetto agli approcci precedenti
-\end{itemize}
-
-\textbf{Motivazioni}:
-\begin{itemize}
-    \item Mancanza di benchmark specifici per dispositivi di sicurezza.
-    \item L'approccio near real-time è conservativo a causa di:
+    \item Entry-level
     \begin{itemize}
-        \item Tempi di risposta del modello non veloci (servizio pensato per tutti gli utenti AWS, tipicamente 5 fps).
-        \item Latenza intrinseca per la comunicazione con il cloud e problemi di connettività.
+        \item Mostrare quali sono le possibilità con l'integrazione dei diversi fattori discussi.
+        \item Approccio che supera barriere di ingresso per piccole aziende sia nei tempi che nei costi.
+    \end{itemize}
+    
+    \item Risposta al problema con un sistema near real-time.
+
+    \item Motivazioni:
+    \begin{itemize}
+        \item Mancanza di benchmark specifici per dispositivi di sicurezza.
+        \item L'approccio near real-time è conservativo
+        \begin{itemize}
+            \item Tempi di risposta del modello non veloci (servizio pensato per tutti gli utenti AWS, tipicamente 5 fps).
+            \item Latenza intrinseca per la comunicazione con il cloud e problemi di connettività.
+        \end{itemize}
     \end{itemize}
 \end{itemize}
+
 \end{frame}
 
-\begin{frame}{Tecnologie Utilizzate}
+\begin{frame}{Tecnologie, protocolli e servizi}
     \centering
     \begin{tabular}{ccc}
         % Prima Riga: Docker, AWS, Apache Flink
@@ -234,15 +246,15 @@ advanced industrial protection”}}
 	\item Scenario	
 \begin{itemize}
 \footnotesize
-	\item Uno o più operatori entrano all’interno di una certa area di sicurezza e si trovano in prossimità di un macchinario attivo
+	\item Uno o più impiegati entrano all’interno di una certa area di sicurezza e si trovano in prossimità di un macchinario attivo
 	\item Una telecamera sul soffitto ed una frontale monitorano l’area di sicurezza
 	\item La zona è definita da un insieme di ancore dotate di sensori che rilevano i tag indossati dai lavoratori. 
 \end{itemize}
-	\item Il sistema genera allarme e spegne il macchinario	
+	\item Il sistema genera allarme e spegne il macchinario se tutti gli operatori	
 \begin{itemize}
 \footnotesize
-	\item Almeno uno degli operatori non possiede i dispositivi di sicurezza
-	\item Almeno uno degli operatori non è abilitato ad agire sulla macchina
+	\item non possiedono i dispositivi di sicurezza
+	\item non sono abilitati ad agire sulla macchina
 \end{itemize}
 \end{itemize}
 \end{column}
@@ -263,59 +275,104 @@ advanced industrial protection”}}
 \end{figure}
 \end{frame}
 
-\begin{frame}{Ingestion e Preprocessing}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/sottosistema-ingestion.png}
+%\begin{frame}{Ingestion e Preprocessing}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{images/sottosistema-ingestion.png}
 %    \caption{Diagramma dell'Architettura Generale}
-\end{figure}
+%\end{figure}
 
-\end{frame}
+%\end{frame}
 
-\begin{frame}{Big Data Processing}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/processing-subsystem.png}
+%\begin{frame}{Big Data Processing}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{images/processing-subsystem.png}
 %    \caption{Diagramma dell'Architettura Generale}
-\end{figure}
+%\end{figure}
 
-\end{frame}
+%\end{frame}
 
 
 \section{Risultati}
 
-\begin{frame}{Test}
-\textbf{Funzionalità Raggiunte}:
+\begin{frame}{Test case}
+
 \begin{itemize}
-    \item Rilevazioni near real-time nei 5 test case
-    \item Dettagli funzionali e metriche
+    \item Rilevazioni dirette dal video feed effettuate per la classe casco protettivo
 \end{itemize}
+\vspace{0.5cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c c c c c}
+\hline
+\textbf{tags} & \textbf{people} & \textbf{equipment} & \textbf{machine state} & \textbf{expected result} \\
+\hline
+0 & 1 & TRUE & TRUE & ALARM \\
+1 & 1 & FALSE & TRUE & ALARM \\
+0 & 1 & FALSE & TRUE & ALARM \\
+2 & 2 & TRUE;FALSE & TRUE & ALARM \\
+1 & 2 & TRUE;FALSE & TRUE & ALARM \\
+\hline
+\end{tabular}
+\end{table}
+
+%\vspace{0.5cm}
+%\textit{\footnotesize (Le etichette dei parametri verranno spiegate oralmente.)}
 \end{frame}
 
+
 \begin{frame}{Metriche}
-\textbf{Funzionalità Raggiunte}:
 \begin{itemize}
-    \item Rilevazioni near real-time nei 5 use case.
-    \item Dettagli funzionali e metriche.
+    \item Rilevazione del casco corretta in quasi tutti i test:
+        \begin{itemize}
+            \item In un caso rilevazione presente nell’80\% dei frame (soglia accettata: 70\%)
+            \item Nelle altre prove, nessuna rilevazione poiché il casco non era indossato
+        \end{itemize}
+    \item Conteggio delle persone sempre esatto e matching corretto su tutti i frame
+    \item Regole per l’attivazione dell’allarme sempre soddisfatte
+    \item Tempi di risposta near real-time:
+        \begin{itemize}
+            \item Ritardo totale medio (dall’evento al ritorno dell’analisi) circa 2,56 s (deviazione standard: 0,374 s)
+            \item Ritardo singolo servizio (Rekognition): ~850 ms
+            \item Ritardo big data application: ~550 ms
+        \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Limitazioni}
 \begin{itemize}
-    \item Discussione delle limitazioni dell'approccio.
-    \item L'azienda ha deciso di passare a una soluzione edge su mio consiglio, estensione di questo progetto.
-    \item Consapevolezza delle differenze rispetto ai lavori accademici più complessi.
+    \item Test non eseguiti in un ambiente industriale reale
+    \item Amazon Rekognition: impossibilità di installare il modello sull'edge
+    \item Assenza di un dataset storico industriale e di un processo di labeling dedicato
+    \item Ambiente di test non automatizzato: esecuzione manuale di script e parametrizzazione
+    \item Utilizzo di due sole telecamere, scalabilità del sistema non verificata
+    \item Generazione degli eventi da sensori simulata, non testati scenari di disconnessione e sincronizzazione
+    \item Potenza insufficiente del gateway per gestire un elevato numero di dispositivi e flussi video RTSP
 \end{itemize}
 \end{frame}
 
 \section{Conclusioni}
 
-\begin{frame}{Conclusioni e Sviluppi futuri}
+\begin{frame}{Conclusioni}
 \begin{itemize}
-    \item Riepilogo dei punti chiave.
-    \item Potenziali miglioramenti ed estensioni future.
+    \item Obiettivi raggiunti: rilevazione di DPI in cloud e gestione quasi in tempo reale.
+    \item Capacità di identificare persone autorizzate e dotate di dispositivi di sicurezza.
+    \item Soluzione già utilizzabile come punto di partenza, pur non essendo ancora confrontabile con lavori edge-based.
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Sviluppi Futuri}
+\begin{itemize}
+    \item Creazione di un modello custom e deploy sull’edge per ridurre latenza e dipendenza dal cloud.
+    \item Integrazione con robot tramite container ROS e AWS Greengrass per favorire comunicazione e controllo locale.
+    \item Automazione dell’ambiente di test con orchestratori (ad es. Step Functions) e CI/CD (CodePipeline).
+    \item Adattabilità del sistema a contesti variabili, con aggiornamenti dinamici delle soglie (Apache Flink + DynamoDB).
+    \item Estensione del logging (CloudWatch) e generazione di metriche e statistiche consultabili via interfaccia utente.
+\end{itemize}
+\end{frame}
+
 
 \section*{Domande}
 
