@@ -74,14 +74,17 @@ cloud}
 
 
 \begin{frame}{OSHA-EU: Impatto sulla produttività nazionale}
-%  \begin{itemize}
-%  	\item DALY: stima anni di vita persi per infortuni e malattie
-%	\item VSLY: metodologia che associa agli anni di vita un valore monetario
 
-%  \end{itemize}
   \begin{columns}  
     % Prima colonna
     \begin{column}{0.5\textwidth}
+      \begin{itemize}
+%  	\item DALY: stima anni di vita persi per infortuni e malattie
+%	\item VSLY: metodologia che associa agli anni di vita un valore monetario
+	\item bottom-up: totale infortuni 6,3\% su PIL
+	\item top-down: mediana infortuni 7,7\% sul PIL	
+	\item Effetti dominio industriale sul PIL italiano 20MLD (1\%)
+  \end{itemize}
       \centering
       \includegraphics[width=\textwidth]{images/onere_infortuni_ba.png}
       \vspace{2mm}
@@ -343,12 +346,10 @@ advanced industrial protection”}
 
 \begin{frame}{Limitazioni}
 \begin{itemize}
-    \item Test non eseguiti in un ambiente industriale reale
+    \item Prove non eseguite in un ambiente industriale reale
+    \item Insieme dei test non automatizzato: implementazione manuale di script e parametrizzazione
     \item Amazon Rekognition: impossibilità di installare il modello sull'edge
-    \item Assenza di un dataset storico industriale e di un processo di labeling dedicato
-    \item Ambiente di test non automatizzato: esecuzione manuale di script e parametrizzazione
     \item Utilizzo di due sole telecamere, scalabilità del sistema non verificata
-    \item Generazione degli eventi da sensori simulata, non testati scenari di disconnessione e sincronizzazione
     \item Potenza insufficiente del gateway per gestire un elevato numero di dispositivi e flussi video RTSP
 \end{itemize}
 \end{frame}
