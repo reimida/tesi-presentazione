@@ -13,11 +13,10 @@
 protezione individuale in ambito
 industriale tramite infrastruttura
 cloud}
-%\subtitle{Sottotitolo della Tesi (se necessario)}
+\subtitle{\tiny Compilato in \LaTeX}
 \course{Corso di Laurea Magistrale in Ingegneria Informatica}
-\author{\href{mailto:rei.zoto@studenti.polito.it}{Rei Zoto}}
-\IDnumber{Matricola: 258017}
-
+\author{ \href{mailto:rei.zoto@studenti.polito.it}{}\\{\small Rei Zoto \hspace{1cm} Relatore: Prof. Luca Ardito}
+}
 \begin{document}
 \maketitle
 
@@ -39,7 +38,6 @@ cloud}
     \end{itemize}
 \end{itemize}
 \end{frame}
-
 \begin{frame}{INAIL: Statistiche sugli infortuni}
   \begin{itemize}
   		\item Totale infortuni nella manifattura anno 2022: 13,9\%
@@ -52,9 +50,8 @@ cloud}
       \vspace{2mm}
       \small{Totale infortuni divisi per genere}
     \end{column}
-
     % Seconda colonna
-    \begin{column}{0.3\textwidth}
+    \begin{column}{0.25\textwidth}
       \centering
       \includegraphics[width=\textwidth]{images/infortuni_industria_e_servizi.png}
       \vspace{2mm}
@@ -82,7 +79,7 @@ cloud}
 %  	\item DALY: stima anni di vita persi per infortuni e malattie
 %	\item VSLY: metodologia che associa agli anni di vita un valore monetario
 	\item bottom-up: totale infortuni 6,3\% su PIL
-	\item top-down: mediana infortuni 7,7\% sul PIL	
+	\item top-down (VSLY): mediana infortuni 7,7\% sul PIL	
 	\item Effetti dominio industriale sul PIL italiano 20MLD (1\%)
   \end{itemize}
       \centering
@@ -128,7 +125,7 @@ cloud}
 	\item Quantità di dati disponibili grazie dispositivi connessi alla rete
 	\item Avanzamenti Deep Learning
 	\item Cloud Computing: potenza di calcolo ed integrazione di modelli e dati nell'ecosistema industriale
-	\item Investimenti
+	\item Investimenti %https://www.grandviewresearch.com/industry-analysis/industrial-internet-of-things-iiot-market
 \end{itemize}
 \end{frame}
 
@@ -303,6 +300,7 @@ advanced industrial protection”}
 
 \begin{itemize}
     \item Rilevazioni dirette dal video feed effettuate per la classe casco protettivo
+    \item machine state: TRUE
 \end{itemize}
 \vspace{0.5cm}
 
@@ -310,13 +308,13 @@ advanced industrial protection”}
 \centering
 \begin{tabular}{c c c c c}
 \hline
-\textbf{tags} & \textbf{people} & \textbf{equipment} & \textbf{machine state} & \textbf{expected result} \\
+\textbf{tags} & \textbf{people} & \textbf{equipment} & \textbf{expected result} \\
 \hline
-0 & 1 & TRUE & TRUE & ALARM \\
-1 & 1 & FALSE & TRUE & ALARM \\
-0 & 1 & FALSE & TRUE & ALARM \\
-2 & 2 & TRUE;FALSE & TRUE & ALARM \\
-1 & 2 & TRUE;FALSE & TRUE & ALARM \\
+0 & 1 & TRUE & ALARM \\
+1 & 1 & FALSE & ALARM \\
+0 & 1 & FALSE  & ALARM \\
+2 & 2 & TRUE;FALSE & ALARM \\
+1 & 2 & TRUE;FALSE & ALARM \\
 \hline
 \end{tabular}
 \end{table}
@@ -358,8 +356,12 @@ advanced industrial protection”}
 
 \begin{frame}{Conclusioni}
 \begin{itemize}
-    \item Obiettivi raggiunti: rilevazione di DPI in cloud e gestione quasi in tempo reale.
-    \item Capacità di identificare persone autorizzate e dotate di dispositivi di sicurezza.
+    \item Obiettivi raggiunti
+	\begin{itemize}
+		\item  Generazione infrastruttura cloud e funzionalità quasi in tempo reale 
+    	\item Capacità di identificare persone autorizzate e dotate di dispositivi di sicurezza
+    \item Architettura facilmente replicabile con utilizzo Infrastructure as Code (IaC)
+    \end{itemize}
     \item Soluzione già utilizzabile come punto di partenza, pur non essendo confrontabile con lavori edge-based.
 \end{itemize}
 \end{frame}
